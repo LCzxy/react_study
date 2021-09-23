@@ -1,2 +1,15 @@
-# react_study
-good good study, 天天向上
+# umi project
+
+## Getting Started
+
+Install dependencies,
+
+```bash
+$ yarn
+```
+
+Start the dev server,
+
+```bash
+$ yarn start
+```
