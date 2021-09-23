@@ -2,14 +2,14 @@
 
 ## Getting Started
 
-Install dependencies,
+下载依赖,
 
 ```bash
-$ yarn
+$ npm install
 ```
 
-Start the dev server,
+启动项目,
 
 ```bash
-$ yarn start
+$ npm start
 ```
