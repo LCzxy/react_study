@@ -1,2 +1,2 @@
 # react_study
-good good study, day day up
+good good study, 天天向上
