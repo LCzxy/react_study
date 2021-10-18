@@ -1,27 +1,48 @@
-import { useState } from 'react';
-import { Menu } from 'antd';
+import { useState, useEffect } from 'react';
+import { Menu, Row, Col } from 'antd';
 import { history } from 'umi';
 import { menuArr } from '../config/commonConfig';
+import styles from './index.less';
 
 const Index = (props: any) => {
-  const [selectKey, setSelectKey] = useState('some');
+  const [selectMainKey, setSelectMainKey] = useState('home');
 
-  const handleClick = (obj: any) => {
-    setSelectKey(obj.key);
-    history.push(`/${obj.key}`);
-  };
+  useEffect(() => {
+    const { pathname } = props.location;
+    const item: any = menuArr.find((it) => it.url === pathname);
+    item && setSelectMainKey(item.key);
+  }, []);
+
   return (
     <span>
-      <Menu
-        onClick={(obj) => handleClick(obj)}
-        selectedKeys={[selectKey]}
-        mode="horizontal"
-      >
-        {menuArr.map((it: any) => (
-          <Menu.Item key={it.key}>{it.value}</Menu.Item>
-        ))}
-      </Menu>
-      <div>{props.children}</div>
+      <Row className={styles.header}>
+        <span className={styles.logo}>
+          <img
+            alt=""
+            className={styles.img}
+            src={require(`../../public/logo.jpeg`)}
+          />
+        </span>
+        <span className={styles.menu}>
+          <Menu selectedKeys={[selectMainKey]} mode="horizontal">
+            {menuArr.map((it: any) => (
+              <Menu.Item
+                onClick={() => {
+                  setSelectMainKey(it.key);
+                  history.push(`${it.url}`);
+                }}
+                key={it.key}
+              >
+                {it.value}
+              </Menu.Item>
+            ))}
+          </Menu>
+        </span>
+        <span onClick={() => history.push('/login')} className={styles.opt}>
+          退出 v
+        </span>
+      </Row>
+      <div className={styles.content}>{props.children}</div>
     </span>
   );
 };
