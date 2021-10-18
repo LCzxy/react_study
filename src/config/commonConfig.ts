@@ -1,5 +1,5 @@
 export const menuArr = [
-  { key: 'home', value: '工作台', url: '/home' },
+  { key: 'bug', value: '缺陷管理', url: '/bug' },
   { key: 'product', value: '产品', url: '/product' },
 ];
 

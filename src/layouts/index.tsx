@@ -5,7 +5,7 @@ import { menuArr } from '../config/commonConfig';
 import styles from './index.less';
 
 const Index = (props: any) => {
-  const [selectMainKey, setSelectMainKey] = useState('home');
+  const [selectMainKey, setSelectMainKey] = useState('bug');
 
   useEffect(() => {
     const { pathname } = props.location;

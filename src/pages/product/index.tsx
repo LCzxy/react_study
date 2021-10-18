@@ -1,6 +1,6 @@
 import { useState } from 'react';
 const Index = () => {
-  return <>大家好</>;
+  return <span>其他</span>;
 };
 
 export default Index;

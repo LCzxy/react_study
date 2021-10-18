@@ -1,11 +1,11 @@
 export default [
   { path: '/login', component: './login' },
-  { path: '/', redirect: 'home' },
+  { path: '/', redirect: 'bug' },
   {
     path: '/',
     component: '@/layouts/index',
     routes: [
-      { path: '/home', component: './home' },
+      { path: '/bug', component: './bug' },
       { path: '/product', component: './product' },
     ],
   },

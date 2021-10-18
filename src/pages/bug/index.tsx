@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Table, Divider, Badge } from 'antd';
 import { stateArr } from '@/config/commonConfig';
 import QueryArea from './components/QueryArea';
@@ -78,9 +77,11 @@ const Index = () => {
     },
   ];
   return (
-    <span className={styles.home}>
+    <span className={styles.bug}>
       <QueryArea />
-      <Table dataSource={dataSource} columns={columns} />
+      <div className="u-mgt10">
+        <Table dataSource={dataSource} columns={columns} />
+      </div>
     </span>
   );
 };
